@@ -75,7 +75,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-  HD44780_init()
+  HD44780_init();
   /* USER CODE END Init */
 
   /* Configure the system clock */

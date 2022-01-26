@@ -1,0 +1,10 @@
+12:15:45 **** Incremental Build of configuration Debug for project stm32-cmsisV2-freertos-blinky ****
+make -j12 all 
+arm-none-eabi-size   stm32-cmsisV2-freertos-blinky.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18492	     24	  20416	  38932	   9814	stm32-cmsisV2-freertos-blinky.elf
+Finished building: default.size.stdout
+ 
+
+12:15:46 Build Finished. 0 errors, 0 warnings. (took 176ms)
+

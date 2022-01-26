@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;stm32-cmsisV2-freertos&apos; to &apos;stm32-cmsisV2-freertos-blinky&apos;" description="Rename resource &apos;stm32-cmsisV2-freertos&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/stm32-cmsisV2-freertos" name="stm32-cmsisV2-freertos-blinky" stamp="1642766801253" updateReferences="true"/>
+</session>

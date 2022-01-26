@@ -1,29 +1,19 @@
-20:36:14 **** Incremental Build of configuration Debug for project serialcom ****
+12:15:45 **** Incremental Build of configuration Debug for project serialcom ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:103:5: warning: implicit declaration of function 'strcpy' [-Wimplicit-function-declaration]
-  103 |     strcpy((char*) buf, "aaha!\r\n");
-      |     ^~~~~~
-../Core/Src/main.c:103:5: warning: incompatible implicit declaration of built-in function 'strcpy'
-../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strcpy'
-   20 | #include "main.h"
-  +++ |+#include <string.h>
-   21 | 
-arm-none-eabi-gcc -o "serialcom.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/blackmath/stm32f401re-fiddling/serialcom/STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="serialcom.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: serialcom.elf
- 
-arm-none-eabi-size   serialcom.elf 
-arm-none-eabi-objdump -h -S  serialcom.elf  > "serialcom.list"
-arm-none-eabi-objcopy  -O binary  serialcom.elf  "serialcom.bin"
-   text	   data	    bss	    dec	    hex	filename
-   8440	     20	   1724	  10184	   27c8	serialcom.elf
-Finished building: default.size.stdout
- 
-Finished building: serialcom.bin
- 
-Finished building: serialcom.list
- 
+../Core/Src/main.c:78:3: error: too few arguments to function 'HD44780_init'
+   78 |   HD44780_init();
+      |   ^~~~~~~~~~~~
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/HD44780.h:150:6: note: declared here
+  150 | void HD44780_init(const HD44780 *lcd);
+      |      ^~~~~~~~~~~~
+../Core/Src/main.c:69:11: warning: unused variable 'buf' [-Wunused-variable]
+   69 |   uint8_t buf[12];
+      |           ^~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
 
-20:36:14 Build Finished. 0 errors, 2 warnings. (took 274ms)
+12:15:45 Build Failed. 2 errors, 1 warnings. (took 176ms)
 
